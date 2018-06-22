@@ -11,17 +11,22 @@ import { StyledIcon } from "../styled.js";
 import { StyledList } from "../styled.js";
 import { Avatar } from "../styled.js";
 
+const ProfileImageBlock = styled.picture``;
+const ProfileImage = styled.img`
+  width: 100%;
+`;
+
 class ProfileNav extends Component {
   render() {
     return (
       <StyledHeader>
         <div className="row">
-          <picture>
-            <img
+          <ProfileImageBlock>
+            <ProfileImage
               src={process.env.PUBLIC_URL + "/img/cover-image.jpg"}
               alt="profileImage"
             />
-          </picture>
+          </ProfileImageBlock>
         </div>
         <StyledContainer>
           <div className="row middle-md middle-lg between-md between-lg">
@@ -32,8 +37,8 @@ class ProfileNav extends Component {
               />
             </div>
             <div className="col-md-6 col-lg-6">
-              <div className="row">
-                <StyledList>
+              <StyledList>
+                <div className="row">
                   <StyledListMenu>
                     <StyledNavLink to="/">
                       Tweet<br />
@@ -64,12 +69,14 @@ class ProfileNav extends Component {
                       <span>8,058</span>
                     </StyledNavLink>
                   </StyledListMenu>
-                </StyledList>
-              </div>
+                </div>
+              </StyledList>
             </div>
             <div className="col-md-3 col-lg-3">
               <TwitterButton type="submit">Follow</TwitterButton>
-              <StyledIcon src={iconMore} alt="MoreButton" />
+              <button>
+                <StyledIcon src={iconMore} alt="MoreButton" />
+              </button>
             </div>
           </div>
         </StyledContainer>

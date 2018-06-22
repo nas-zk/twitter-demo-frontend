@@ -3,19 +3,30 @@ import { BrowserRouter } from "react-router-dom";
 import Helmet from "react-helmet";
 import GlobalNav from "./globalNav";
 import ProfileNav from "./profileNav";
+import ProfileSidebar from "./profileSidebar";
+import TweetTimeline from "./profileTweetTimeline";
+import SidebarCommonModules from "./sidebarCommonModules";
+import { StyledMain, StyledContainer } from "./styled.js";
 
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <main>
+        <StyledMain>
           <Helmet>
             <title>Twitter Demo App</title>
             <meta name="description" content="Twitter Demo App" />
           </Helmet>
           <GlobalNav />
           <ProfileNav />
-        </main>
+          <StyledContainer>
+            <div className="row">
+              <ProfileSidebar />
+              <TweetTimeline />
+              <SidebarCommonModules />
+            </div>
+          </StyledContainer>
+        </StyledMain>
       </BrowserRouter>
     );
   }
