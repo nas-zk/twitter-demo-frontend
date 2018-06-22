@@ -20,22 +20,35 @@ import {
 
 const SearchBox = styled.form`
   background-color: #f5f8fa;
-  border: 1px #e6ecf0;
+  border: 1px solid #e6ecf0;
   border-radius: 100px;
   width: 100%;
   height: 33px;
+  box-sizing: border-box;
+  border-left: none;
+  display: flex;
+  justify-content: space-between;
 `;
 
 const SearchBoxInput = styled.input`
   outline: none;
   background-color: #f5f8fa;
-  width: 100%;
+  width: 80%;
   height: 32px;
   border-radius: 21px;
-  border: 1px solid #e6ecf0;
+  border: 1px solid #f5f8fa;
+  border-left: none;
   box-sizing: border-box;
   font-size: 12px;
   padding-left: 8px;
+`;
+
+const SearchButton = styled.button`
+  border: none;
+  background-color: #f5f8fa;
+  cursor: pointer;
+  width: 20%;
+  border-radius: 100px;
 `;
 
 const GlobalNav = props => (
@@ -80,11 +93,13 @@ const GlobalNav = props => (
                   placeholder="Search Twitter"
                   name="Search Twitter"
                 />
-                <StyledIcon
-                  kind="searchIcon"
-                  src={iconMagnifier}
-                  alt="Magnifier"
-                />
+                <SearchButton type="submit">
+                  <StyledIcon
+                    kind="searchIcon"
+                    src={iconMagnifier}
+                    alt="Magnifier"
+                  />
+                </SearchButton>
               </SearchBox>
             </div>
             <div className="col-md-2 col-lg-2">

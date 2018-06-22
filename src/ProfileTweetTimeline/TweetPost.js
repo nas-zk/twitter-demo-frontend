@@ -37,7 +37,7 @@ const TweetPost = props => (
     {props.pinned == "pinned" && (
       <div className="row">
         <PinnedTweet>
-          <StyledIcon kind="searchIcon" src={iconPinned} alt="Pinned Icon" />
+          <StyledIcon src={iconPinned} alt="Pinned Icon" />
           <span>Pinned Tweet</span>
         </PinnedTweet>
       </div>

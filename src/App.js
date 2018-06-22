@@ -8,28 +8,24 @@ import TweetTimeline from "./profileTweetTimeline";
 import SidebarCommonModules from "./sidebarCommonModules";
 import { StyledMain, StyledContainer } from "./styled.js";
 
-class App extends Component {
-  render() {
-    return (
-      <BrowserRouter>
-        <StyledMain>
-          <Helmet>
-            <title>Twitter Demo App</title>
-            <meta name="description" content="Twitter Demo App" />
-          </Helmet>
-          <GlobalNav />
-          <ProfileNav />
-          <StyledContainer>
-            <div className="row">
-              <ProfileSidebar />
-              <TweetTimeline />
-              <SidebarCommonModules />
-            </div>
-          </StyledContainer>
-        </StyledMain>
-      </BrowserRouter>
-    );
-  }
-}
+const App = props => (
+  <BrowserRouter>
+    <StyledMain>
+      <Helmet>
+        <title>Twitter Demo App</title>
+        <meta name="description" content="Twitter Demo App" />
+      </Helmet>
+      <GlobalNav />
+      <ProfileNav />
+      <StyledContainer>
+        <div className="row">
+          <ProfileSidebar />
+          <TweetTimeline />
+          <SidebarCommonModules />
+        </div>
+      </StyledContainer>
+    </StyledMain>
+  </BrowserRouter>
+);
 
 export default App;
