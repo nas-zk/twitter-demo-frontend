@@ -1,12 +1,9 @@
 import React, { Component } from "react";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 import Helmet from "react-helmet";
-import GlobalNav from "./globalNav";
-import ProfileNav from "./profileNav";
-import ProfileSidebar from "./profileSidebar";
-import TweetTimeline from "./profileTweetTimeline";
-import SidebarCommonModules from "./sidebarCommonModules";
-import { StyledMain, StyledContainer } from "./styled.js";
+import { Redirect } from "react-router";
+import { StyledMain } from "./styled";
+import ProfilePage from "./ProfilePage";
 
 const App = props => (
   <BrowserRouter>
@@ -15,15 +12,8 @@ const App = props => (
         <title>Twitter Demo App</title>
         <meta name="description" content="Twitter Demo App" />
       </Helmet>
-      <GlobalNav />
-      <ProfileNav />
-      <StyledContainer>
-        <div className="row">
-          <ProfileSidebar />
-          <TweetTimeline />
-          <SidebarCommonModules />
-        </div>
-      </StyledContainer>
+      <Redirect from="/" to="/everyinteract" />
+      <Route path="/everyinteract" component={ProfilePage} />
     </StyledMain>
   </BrowserRouter>
 );

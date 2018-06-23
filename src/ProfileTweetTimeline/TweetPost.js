@@ -50,6 +50,11 @@ const TweetText = styled.p`
   font-size: 20px;
   font-weight: lighter;
   margin: 6px 0 12px 0;
+
+  a {
+    color: #1da1f2;
+    text-decoration: none;
+  }
 `;
 
 const ActionFooter = styled.footer`
@@ -62,6 +67,10 @@ const ActionButton = styled.button`
   cursor: pointer;
   font-size: 13px;
 `;
+
+const LoveCount = styled.span`
+  color: #e2264d;
+`;
 const Tweet = styled.div``;
 const TweetMedia = styled.div``;
 const TweetHashtag = styled.span`
@@ -70,7 +79,14 @@ const TweetHashtag = styled.span`
 const TweetMediaImage = styled.img`
   max-width: 100%;
 `;
-const TweetMediaArticle = styled.a``;
+const TweetMediaArticle = styled.a`
+  text-decoration: none;
+  color: #292f33;
+  h5,
+  p {
+    margin-top: 0;
+  }
+`;
 
 const TweetPost = props => (
   <TweetPostBox to={props.tweetLink}>
@@ -99,7 +115,7 @@ const TweetPost = props => (
         <TweetContent>
           <Tweet>
             <TweetText>
-              {props.tweetText}
+              {props.tweetText}{" "}
               <a href={props.tweetTextLink}>{props.tweetTextLink}</a>
               <TweetHashtag>{props.tweetHashtag}</TweetHashtag>
             </TweetText>
@@ -149,7 +165,7 @@ const TweetPost = props => (
             {props.loveCount == "" && (
               <StyledIcon src={iconNoLove} alt="Blank Love Icon" />
             )}
-            <span>{props.loveCount}</span>
+            <LoveCount>{props.loveCount}</LoveCount>
           </ActionButton>
           <ActionButton type="submit">
             <StyledIcon src={iconEnvelope} alt="Envelope Icon" />

@@ -11,7 +11,6 @@ import TweetPost from "./TweetPost";
 
 const TweetNav = styled.nav`
   border: 1px solid #e6ecf0;
-  padding-left: 18px;
 `;
 const StyledTimeline = styled.section`
   background-color: #fff;
@@ -25,17 +24,17 @@ const TweetTimeline = props => (
         <StyledList>
           <div className="row">
             <StyledListMenu kind="tweetTab">
-              <StyledNavLink kind="tweetTab" to="/">
+              <StyledNavLink kind="tweetTab" to="/everyinteract">
                 Tweets
               </StyledNavLink>
             </StyledListMenu>
             <StyledListMenu kind="tweetTab">
-              <StyledNavLink kind="tweetTab" to="/">
+              <StyledNavLink kind="tweetTab" to="/everyinteract/Replies">
                 Tweets & Replies
               </StyledNavLink>
             </StyledListMenu>
             <StyledListMenu kind="tweetTab">
-              <StyledNavLink kind="tweetTab" to="/">
+              <StyledNavLink kind="tweetTab" to="/everyinteract/Media">
                 Media
               </StyledNavLink>
             </StyledListMenu>
@@ -50,7 +49,7 @@ const TweetTimeline = props => (
         name="Every Interaction"
         accountName="EveryInteract"
         date="May,2 2008"
-        tweetText="We’ve made some more resources for all you wonderful #design folk everyinteraction.com/resources/ "
+        tweetText="We’ve made some more resources for all you wonderful #design folk "
         tweetTextLink="everyinteraction.com/resources/"
         tweetHashtag="#webdesign #UI"
         tweetImageLink={process.env.PUBLIC_URL + "./img/img-tweet1.png"}

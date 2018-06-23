@@ -1,15 +1,17 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { Link, NavLink } from "react-router-dom";
-import { StyledHeader } from "../styled.js";
-import { StyledContainer } from "../styled.js";
-import { StyledNavLink } from "../styled.js";
-import { StyledListMenu } from "../styled.js";
-import { TwitterButton } from "../styled.js";
+import {
+  StyledHeader,
+  Avatar,
+  StyledContainer,
+  StyledNavLink,
+  StyledListMenu,
+  TwitterButton,
+  StyledIcon,
+  StyledList
+} from "../styled";
 import iconMore from "./icon-more.svg";
-import { StyledIcon } from "../styled.js";
-import { StyledList } from "../styled.js";
-import { Avatar } from "../styled.js";
 
 const ProfileImageBlock = styled.picture`
   width: 100%;
@@ -22,6 +24,7 @@ const ProfileAvatar = styled.img`
   border-radius: 100px;
   margin-top: -130px;
   position: absolute;
+  border: 1px solid #e6ecf0;
 `;
 
 const NavLinkMenuCount = styled.span`
@@ -32,6 +35,12 @@ const NavLinkMenuCount = styled.span`
   border-bottom: 2px solid #fff;
 
   ${StyledNavLink}:hover & {
+    color: #1da1f2;
+    box-sizing: border-box;
+    border-bottom: 2px solid #1da1f2;
+    transition: all 0.2s ease-in-out;
+  }
+  ${StyledNavLink}.active & {
     color: #1da1f2;
     box-sizing: border-box;
     border-bottom: 2px solid #1da1f2;
@@ -68,31 +77,31 @@ const ProfileNav = props => (
           <StyledList kind="profileNav">
             <div className="row">
               <StyledListMenu kind="profileNav">
-                <StyledNavLink to="/">
+                <StyledNavLink to="/everyinteract">
                   Tweet
                   <NavLinkMenuCount>8,058</NavLinkMenuCount>
                 </StyledNavLink>
               </StyledListMenu>
               <StyledListMenu kind="profileNav">
-                <StyledNavLink to="/">
+                <StyledNavLink to="/everyinteract/Following">
                   Following
                   <NavLinkMenuCount>721</NavLinkMenuCount>
                 </StyledNavLink>
               </StyledListMenu>
               <StyledListMenu kind="profileNav">
-                <StyledNavLink to="/">
+                <StyledNavLink to="/everyinteract/Followers">
                   Followers
                   <NavLinkMenuCount>1,815</NavLinkMenuCount>
                 </StyledNavLink>
               </StyledListMenu>
               <StyledListMenu kind="profileNav">
-                <StyledNavLink to="/">
+                <StyledNavLink to="/everyinteract/Likes">
                   Likes
                   <NavLinkMenuCount>460</NavLinkMenuCount>
                 </StyledNavLink>
               </StyledListMenu>
               <StyledListMenu kind="profileNav">
-                <StyledNavLink to="/">
+                <StyledNavLink to="/everyinteract/Lists">
                   Lists
                   <NavLinkMenuCount>2</NavLinkMenuCount>
                 </StyledNavLink>

@@ -16,7 +16,7 @@ import {
   StyledListMenu,
   StyledIcon,
   StyledList
-} from "../styled.js";
+} from "../styled";
 
 const SearchBox = styled.form`
   background-color: #f5f8fa;

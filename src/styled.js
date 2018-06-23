@@ -33,6 +33,10 @@ export const StyledNavLink = styled(NavLink)`
       color: #1da1f2;
       font-size: 18px;
       font-weight: bold;
+
+      &.active {
+        color: #292f33;
+      }
     `};
 `;
 
@@ -113,6 +117,11 @@ export const StyledIcon = styled.img`
     props.kind === "sidebar" &&
     css`
       padding-right: 6px;
+    `};
+  ${props =>
+    props.kind === "delete" &&
+    css`
+      margin: 0;
     `};
 `;
 
