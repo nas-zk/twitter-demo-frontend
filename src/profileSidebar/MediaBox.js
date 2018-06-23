@@ -6,7 +6,7 @@ import { StyledIcon } from "../styled.js";
 const mediaCount = props => props.mediaCount;
 
 const MediaBox = props => (
-  <div className="row">
+  <div className="">
     {props.mediaCount > 0 && (
       <p>
         <StyledIcon src={iconMedia} alt="icon media" />

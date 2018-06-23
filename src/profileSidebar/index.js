@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import styled from "styled-components";
+import styled, { extend } from "styled-components";
 import { Link, NavLink } from "react-router-dom";
 import { StyledSidebar } from "../styled.js";
 import UserInfo from "./UserInfo";
@@ -14,8 +14,12 @@ import {
   StyledSpace
 } from "../styled.js";
 
-const ProfileUserList = StyledList.extend``;
-const ProfileUserListItem = styled.li``;
+const ProfileUserList = StyledList.extend`
+  flex-wrap: wrap;
+`;
+const ProfileUserListItem = styled.li`
+  margin: 0;
+`;
 
 const ProfileSidebar = props => (
   <div className="col-lg-3">
@@ -31,11 +35,21 @@ const ProfileSidebar = props => (
         link="everyinteraction.com"
         date="May 2008"
       />
-      <TwitterButton type="submit">Tweet to</TwitterButton>
-      <TwitterButton type="submit">Message</TwitterButton>
-
       <div className="row">
-        <FollowersList followersCount={6} />
+        <div className="col-md-6 col-lg-6">
+          <TwitterButton kind="sidebar" type="submit">
+            Tweet to
+          </TwitterButton>
+        </div>
+        <div className="col-md-6 col-lg-6">
+          <TwitterButton kind="sidebar" type="submit">
+            Message
+          </TwitterButton>
+        </div>
+      </div>
+
+      <FollowersList followersCount={6} />
+      <div className="row">
         <ProfileUserList>
           <ProfileUserListItem>
             <UserList

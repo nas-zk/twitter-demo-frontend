@@ -20,12 +20,30 @@ const ProfileImage = styled.img`
 
 const ProfileAvatar = styled.img`
   border-radius: 100px;
-  margin-top: -120px;
+  margin-top: -130px;
   position: absolute;
 `;
 
 const NavLinkMenuCount = styled.span`
   font-size: 18px;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  border-bottom: 2px solid #fff;
+
+  ${StyledNavLink}:hover & {
+    color: #1da1f2;
+    box-sizing: border-box;
+    border-bottom: 2px solid #1da1f2;
+    transition: all 0.2s ease-in-out;
+  }
+`;
+
+const MoreActionButton = styled.button`
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-left: 5px;
 `;
 
 const ProfileNav = props => (
@@ -39,7 +57,7 @@ const ProfileNav = props => (
       </ProfileImageBlock>
     </div>
     <StyledContainer>
-      <div className="row middle-md middle-lg">
+      <div className="row middle-md middle-lg start-md start-lg">
         <div className="col-md-3 col-lg-3">
           <ProfileAvatar
             src={process.env.PUBLIC_URL + "/img/ei-avatar.png"}
@@ -47,58 +65,50 @@ const ProfileNav = props => (
           />
         </div>
         <div className="col-md-6 col-lg-6">
-          <StyledList>
+          <StyledList kind="profileNav">
             <div className="row">
               <StyledListMenu kind="profileNav">
                 <StyledNavLink to="/">
                   Tweet
-                  <NavLinkMenuCount>
-                    <br />8,058
-                  </NavLinkMenuCount>
+                  <NavLinkMenuCount>8,058</NavLinkMenuCount>
                 </StyledNavLink>
               </StyledListMenu>
-              <StyledListMenu>
+              <StyledListMenu kind="profileNav">
                 <StyledNavLink to="/">
                   Following
-                  <span>
-                    <br />721
-                  </span>
+                  <NavLinkMenuCount>721</NavLinkMenuCount>
                 </StyledNavLink>
               </StyledListMenu>
-              <StyledListMenu>
+              <StyledListMenu kind="profileNav">
                 <StyledNavLink to="/">
                   Followers
-                  <span>
-                    <br />1,815
-                  </span>
+                  <NavLinkMenuCount>1,815</NavLinkMenuCount>
                 </StyledNavLink>
               </StyledListMenu>
-              <StyledListMenu>
+              <StyledListMenu kind="profileNav">
                 <StyledNavLink to="/">
                   Likes
-                  <span>
-                    <br />460
-                  </span>
+                  <NavLinkMenuCount>460</NavLinkMenuCount>
                 </StyledNavLink>
               </StyledListMenu>
-              <StyledListMenu>
+              <StyledListMenu kind="profileNav">
                 <StyledNavLink to="/">
                   Lists
-                  <span>
-                    <br />2
-                  </span>
+                  <NavLinkMenuCount>2</NavLinkMenuCount>
                 </StyledNavLink>
               </StyledListMenu>
             </div>
           </StyledList>
         </div>
         <div className="col-md-3 col-lg-3">
-          <TwitterButton kind="whiteTwitterButton" type="submit">
-            Follow
-          </TwitterButton>
-          <button>
-            <StyledIcon src={iconMore} alt="MoreButton" />
-          </button>
+          <div className="row end-md end-lg">
+            <TwitterButton kind="whiteTwitterButton" type="submit">
+              Follow
+            </TwitterButton>
+            <MoreActionButton type="submit">
+              <StyledIcon src={iconMore} alt="MoreButton" />
+            </MoreActionButton>
+          </div>
         </div>
       </div>
     </StyledContainer>

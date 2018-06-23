@@ -13,15 +13,55 @@ import iconPinned from "./icon-pinned.svg";
 const TweetPostBox = styled.div`
   background-color: #fff;
   color: #14171a;
+  border: 1px solid #e6ecf0;
+  padding-left: 13px;
 `;
-const UserName = styled.span``;
-const UserNameAccount = styled.span``;
-const PostDate = styled.span``;
-const PinnedTweet = styled.div``;
-const TweetHeader = styled.header``;
-const TweetContent = styled.div``;
-const ActionFooter = styled.footer``;
-const ActionButton = styled.button``;
+const PinnedTweet = styled.div`
+  font-size: 12px;
+  font-weight: bolder;
+  color: #707e88;
+`;
+
+const TweetContent = styled.div`
+  padding-right: 20px;
+`;
+
+const TweetHeader = styled.header`
+  margin: 4px 0 4px 0;
+`;
+
+const UserName = styled.span`
+  font-weight: bold;
+  color: #292f33;
+  padding-right: 3px;
+`;
+const UserNameAccount = styled.span`
+  padding-right: 3px;
+  color: #707e88;
+  font-size: 13px;
+`;
+const PostDate = styled.span`
+  padding-right: 3px;
+  color: #707e88;
+  font-size: 13px;
+`;
+
+const TweetText = styled.p`
+  font-size: 20px;
+  font-weight: lighter;
+  margin: 6px 0 12px 0;
+`;
+
+const ActionFooter = styled.footer`
+  margin: 13px 0 11px 0;
+`;
+const ActionButton = styled.button`
+  background-color: #fff;
+  border: none;
+  margin-right: 35px;
+  cursor: pointer;
+  font-size: 13px;
+`;
 const Tweet = styled.div``;
 const TweetMedia = styled.div``;
 const TweetHashtag = styled.span`
@@ -35,12 +75,16 @@ const TweetMediaArticle = styled.a``;
 const TweetPost = props => (
   <TweetPostBox to={props.tweetLink}>
     {props.pinned == "pinned" && (
-      <div className="row">
-        <PinnedTweet>
-          <StyledIcon src={iconPinned} alt="Pinned Icon" />
-          <span>Pinned Tweet</span>
-        </PinnedTweet>
-      </div>
+      <PinnedTweet>
+        <div className="row">
+          <div className="col-md-1 col-lg-1 end-md end-lg">
+            <StyledIcon src={iconPinned} alt="Pinned Icon" />
+          </div>
+          <div className="col-md-11 col-lg-11">
+            <span>Pinned Tweet</span>
+          </div>
+        </div>
+      </PinnedTweet>
     )}
     <div className="row">
       <div className="col-lg-1">
@@ -54,11 +98,11 @@ const TweetPost = props => (
         </TweetHeader>
         <TweetContent>
           <Tweet>
-            <p>
+            <TweetText>
               {props.tweetText}
               <a href={props.tweetTextLink}>{props.tweetTextLink}</a>
               <TweetHashtag>{props.tweetHashtag}</TweetHashtag>
-            </p>
+            </TweetText>
           </Tweet>
           <TweetMedia>
             {props.tweetImageLink && (

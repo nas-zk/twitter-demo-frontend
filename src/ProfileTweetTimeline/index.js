@@ -9,7 +9,10 @@ import {
 } from "../styled.js";
 import TweetPost from "./TweetPost";
 
-const TweetNav = styled.nav``;
+const TweetNav = styled.nav`
+  border: 1px solid #e6ecf0;
+  padding-left: 18px;
+`;
 const StyledTimeline = styled.section`
   background-color: #fff;
 `;
@@ -21,14 +24,20 @@ const TweetTimeline = props => (
       <TweetNav>
         <StyledList>
           <div className="row">
-            <StyledListMenu>
-              <StyledNavLink to="/">Tweets</StyledNavLink>
+            <StyledListMenu kind="tweetTab">
+              <StyledNavLink kind="tweetTab" to="/">
+                Tweets
+              </StyledNavLink>
             </StyledListMenu>
-            <StyledListMenu>
-              <StyledNavLink to="/">Tweets & Replies</StyledNavLink>
+            <StyledListMenu kind="tweetTab">
+              <StyledNavLink kind="tweetTab" to="/">
+                Tweets & Replies
+              </StyledNavLink>
             </StyledListMenu>
-            <StyledListMenu>
-              <StyledNavLink to="/">Media</StyledNavLink>
+            <StyledListMenu kind="tweetTab">
+              <StyledNavLink kind="tweetTab" to="/">
+                Media
+              </StyledNavLink>
             </StyledListMenu>
           </div>
         </StyledList>
