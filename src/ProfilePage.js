@@ -5,7 +5,7 @@ import GlobalNav from "./globalNav";
 import ProfileNav from "./profileNav";
 import ProfileSidebar from "./profileSidebar";
 import TweetTimeline from "./profileTweetTimeline";
-import SidebarCommonModules from "./sidebarCommonModules";
+import TrendsAndToFollow from "./sidebarTrendsAndToFollow";
 import { StyledMain, StyledContainer } from "./styled.js";
 
 const ProfilePage = () => (
@@ -21,7 +21,7 @@ const ProfilePage = () => (
         <div className="row">
           <ProfileSidebar />
           <TweetTimeline />
-          <SidebarCommonModules />
+          <TrendsAndToFollow />
         </div>
       </StyledContainer>
     </StyledMain>

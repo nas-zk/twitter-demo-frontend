@@ -13,13 +13,6 @@ const WhoToFollow = styled.section`
 const WhoToFollowHeader = styled.header`
   padding: 5px 8px 0 14px;
 
-  h3 {
-    font-size: 17px;
-    font-weight: bold;
-    margin-top: 0px;
-    align-self: baseline;
-  }
-
   button {
     background-color: #fff;
     border: none;
@@ -40,13 +33,6 @@ const WhoToFollowHeader = styled.header`
 const TrendsToFollowHeader = styled.header`
   padding: 5px 8px 0 14px;
 
-  h3 {
-    font-size: 17px;
-    font-weight: bold;
-    margin: 0px;
-    align-self: baseline;
-  }
-
   button {
     background-color: #fff;
     border: none;
@@ -55,6 +41,13 @@ const TrendsToFollowHeader = styled.header`
     align-self: baseline;
     cursor: pointer;
   }
+`;
+
+const StyledTitle = styled.h3`
+  font-size: 17px;
+  font-weight: bold;
+  margin-top: 0px;
+  align-self: baseline;
 `;
 
 const StyledBreaker = styled.hr`
@@ -78,13 +71,13 @@ const GlobalFooter = styled.footer`
   color: #718290;
   font-size: 13px;
 `;
-const SidebarCommonModules = props => (
+const TrendsAndToFollow = props => (
   <div className="col-lg-3">
     <StyledSpace />
     <WhoToFollow>
       <WhoToFollowHeader>
         <div className="row around-md around-lg">
-          <h3>Who to Follow</h3> {" · "}
+          <StyledTitle>Who to Follow</StyledTitle> {" · "}
           <button type="button">Refresh</button>
           {" · "} <Link to="/view all">View all</Link>
         </div>
@@ -121,7 +114,7 @@ const SidebarCommonModules = props => (
     <TrendsToFollow>
       <TrendsToFollowHeader>
         <div className="row around-md around-lg ">
-          <h3>United Kingdom Trends</h3> {" · "}
+          <StyledTitle>United Kingdom Trends</StyledTitle> {" · "}
           <button type="button">Change</button>
         </div>
       </TrendsToFollowHeader>
@@ -158,4 +151,4 @@ const SidebarCommonModules = props => (
   </div>
 );
 
-export default SidebarCommonModules;
+export default TrendsAndToFollow;
