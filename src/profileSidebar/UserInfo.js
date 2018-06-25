@@ -51,7 +51,7 @@ const UserInfo = props => (
   <div>
     <UserName>
       {props.name}
-      {props.isAccountVerified == "verified" && (
+      {props.isAccountVerified && (
         <StyledIcon src={iconTick} alt="verified account" />
       )}
     </UserName>

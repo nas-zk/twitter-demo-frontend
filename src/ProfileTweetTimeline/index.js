@@ -43,7 +43,7 @@ const TweetTimeline = props => (
       </TweetNav>
 
       <TweetPost
-        pinned="pinned"
+        pinned={true}
         tweetLink="/"
         userAvatar={process.env.PUBLIC_URL + "./img/avatar.png"}
         name="Every Interaction"

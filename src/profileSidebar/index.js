@@ -27,7 +27,7 @@ const ProfileSidebar = props => (
     <StyledSidebar>
       <UserInfo
         name="Every Interaction"
-        isAccountVerified="verified"
+        isAccountVerified={true}
         accountName="@EveryInteract"
         isUserFollowsYou="yes"
         description="UX Design studio focussed problem solving creativity. Design to us is how can we make things *work* amazing."

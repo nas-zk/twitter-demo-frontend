@@ -90,7 +90,7 @@ const TweetMediaArticle = styled.a`
 
 const TweetPost = props => (
   <TweetPostBox to={props.tweetLink}>
-    {props.pinned == "pinned" && (
+    {props.pinned && (
       <PinnedTweet>
         <div className="row">
           <div className="col-md-1 col-lg-1 end-md end-lg">
