@@ -12,35 +12,17 @@ const WhoToFollow = styled.section`
 `;
 const WhoToFollowHeader = styled.header`
   padding: 5px 8px 0 14px;
+`;
 
-  button {
-    background-color: #fff;
-    border: none;
-    color: #1da1f2;
-    font-size: 12px;
-    align-self: baseline;
-    cursor: pointer;
-  }
-
-  a {
-    text-decoration: none;
-    color: #1da1f2;
-    font-size: 12px;
-    align-self: baseline;
-  }
+const StyledSidebarLink = styled(Link)`
+  text-decoration: none;
+  color: #1da1f2;
+  font-size: 12px;
+  align-self: baseline;
 `;
 
 const TrendsToFollowHeader = styled.header`
   padding: 5px 8px 0 14px;
-
-  button {
-    background-color: #fff;
-    border: none;
-    color: #1da1f2;
-    font-size: 12px;
-    align-self: baseline;
-    cursor: pointer;
-  }
 `;
 
 const StyledTitle = styled.h3`
@@ -48,6 +30,15 @@ const StyledTitle = styled.h3`
   font-weight: bold;
   margin-top: 0px;
   align-self: baseline;
+`;
+
+const UpdateButton = styled.button`
+  background-color: #fff;
+  border: none;
+  color: #1da1f2;
+  font-size: 12px;
+  align-self: baseline;
+  cursor: pointer;
 `;
 
 const StyledBreaker = styled.hr`
@@ -78,8 +69,8 @@ const TrendsAndToFollow = props => (
       <WhoToFollowHeader>
         <div className="row around-md around-lg">
           <StyledTitle>Who to Follow</StyledTitle> {" · "}
-          <button type="button">Refresh</button>
-          {" · "} <Link to="/view all">View all</Link>
+          <UpdateButton type="button">Refresh</UpdateButton>
+          {" · "} <StyledSidebarLink to="/view all">View all</StyledSidebarLink>
         </div>
       </WhoToFollowHeader>
       <WhoToFollowUser
@@ -115,7 +106,7 @@ const TrendsAndToFollow = props => (
       <TrendsToFollowHeader>
         <div className="row around-md around-lg ">
           <StyledTitle>United Kingdom Trends</StyledTitle> {" · "}
-          <button type="button">Change</button>
+          <UpdateButton type="button">Change</UpdateButton>
         </div>
       </TrendsToFollowHeader>
       <ul>
