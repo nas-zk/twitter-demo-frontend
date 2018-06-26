@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { Avatar } from "../styled.js";
 import { Link } from "react-router-dom";
 
 const MediaPreview = styled.img`

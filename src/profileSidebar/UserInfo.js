@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { Link, NavLink } from "react-router-dom";
-import { StyledIcon } from "../styled.js";
 import iconTick from "./tick.svg";
 import iconLocation from "./icon-location.svg";
 import iconLink from "./icon-link.svg";
@@ -24,6 +23,12 @@ const UserNameAccount = styled.h2`
 const FollowCheck = styled.span`
   font-size: 12px;
   padding-left: 3px;
+`;
+
+const StyledIcon = styled.img`
+  margin-right: 3px;
+  margin-left: 3px;
+  padding-right: 6px;
 `;
 
 const UserDescription = styled.p`
@@ -63,17 +68,17 @@ const UserInfo = props => (
     </UserNameAccount>
     <UserDescription>{props.description}</UserDescription>
     <UserLocation>
-      <StyledIcon kind="sidebar" src={iconLocation} alt="location icon" />
+      <StyledIcon src={iconLocation} alt="location icon" />
       {props.location}
     </UserLocation>
     <UserLinkInfo>
       <UserLinkExternal href={props.link}>
-        <StyledIcon kind="sidebar" src={iconLink} alt="link icon" />
+        <StyledIcon src={iconLink} alt="link icon" />
         {props.link}
       </UserLinkExternal>
     </UserLinkInfo>
     <UserJoined>
-      <StyledIcon kind="sidebar" src={iconJoined} alt="joined icon" />
+      <StyledIcon src={iconJoined} alt="joined icon" />
       {format(props.date, "[Joined] MMMM YYYY")}
     </UserJoined>
   </div>

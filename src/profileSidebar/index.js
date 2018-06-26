@@ -1,18 +1,23 @@
 import React, { Component } from "react";
 import styled, { extend } from "styled-components";
 import { Link, NavLink } from "react-router-dom";
-import { StyledSidebar } from "../styled.js";
 import UserInfo from "./UserInfo";
 import FollowersList from "./FollowersList";
 import UserList from "./UserList";
 import MediaBox from "./MediaBox";
 import MediaItem from "./MediaBoxItem";
-import {
-  TwitterButton,
-  StyledIcon,
-  StyledList,
-  StyledSpace
-} from "../styled.js";
+
+const StyledSpace = styled.div`
+  background-color: #14171a;
+  margin-top: 10px;
+`;
+
+const StyledList = styled.ul`
+  list-style: none;
+  padding: 0px;
+  display: flex;
+  margin: 0;
+`;
 
 const ProfileUserList = StyledList.extend`
   flex-wrap: wrap;
@@ -20,6 +25,19 @@ const ProfileUserList = StyledList.extend`
 const ProfileUserListItem = styled.li`
   margin: 0;
 `;
+const TwitterButton = styled.button`
+  background-color: #1da1f2;
+  color: #fff;
+  border: 1px solid #1da1f2;
+  border-radius: 100px;
+  font-weight: bold;
+  line-height: 20px;
+  padding: 4px 16px;
+  cursor: pointer;
+  width: 100%;
+`;
+
+const StyledSidebar = styled.section``;
 
 const ProfileSidebar = props => (
   <div className="col-lg-3">
@@ -37,14 +55,10 @@ const ProfileSidebar = props => (
       />
       <div className="row">
         <div className="col-md-6 col-lg-6">
-          <TwitterButton kind="sidebar" type="submit">
-            Tweet to
-          </TwitterButton>
+          <TwitterButton type="submit">Tweet to</TwitterButton>
         </div>
         <div className="col-md-6 col-lg-6">
-          <TwitterButton kind="sidebar" type="submit">
-            Message
-          </TwitterButton>
+          <TwitterButton type="submit">Message</TwitterButton>
         </div>
       </div>
 

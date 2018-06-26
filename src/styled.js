@@ -154,5 +154,3 @@ export const StyledListMenu = styled.li`
       margin: 0 10px 0 10px;
     `};
 `;
-
-export const StyledSidebar = styled.section``;
