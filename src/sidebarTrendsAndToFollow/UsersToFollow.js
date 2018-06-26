@@ -1,8 +1,27 @@
 import React, { Component } from "react";
-import styled from "styled-components";
-import { Avatar, TwitterButton, StyledIcon } from "../styled.js";
+import styled, { css } from "styled-components";
 import iconDelete from "./icon-delete.svg";
 import iconTick from "./tick.svg";
+
+export const TwitterButton = styled.button`
+  background-color: #fff;
+  color: #1da1f2;
+  border: 1px solid #1da1f2;
+  border-radius: 100px;
+  font-weight: bold;
+  line-height: 20px;
+  padding: 4px 16px;
+  cursor: pointer;
+`;
+
+const Avatar = styled.img`
+  border-radius: 100px;
+`;
+
+const StyledIcon = styled.img`
+  margin-right: 3px;
+  margin-left: 3px;
+`;
 
 const WhoToFollowUserBlock = styled.div`
   padding: 3px 8px 0 12px;
@@ -34,13 +53,11 @@ const WhoToFollowUser = props => (
       <div className="col-md-8 col-lg-8">
         <UserPreviewInfo>
           <UserName>{props.name}</UserName>
-          {props.isAccountVerified == "verified" && (
+          {props.isAccountVerified && (
             <StyledIcon src={iconTick} alt="verified account" />
           )}
           <UserNameAccount>@{props.accountName}</UserNameAccount>
-          <TwitterButton kind="whiteTwitterButton" type="submit">
-            Follow
-          </TwitterButton>
+          <TwitterButton type="submit">Follow</TwitterButton>
         </UserPreviewInfo>
       </div>
       <div className="col-md-2 col-lg-2 top-md top-lg end-md end-lg">

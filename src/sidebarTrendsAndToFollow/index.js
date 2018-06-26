@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import styled from "styled-components";
-import { StyledList, StyledSpace, StyledLink, StyledIcon } from "../styled.js";
+import styled, { css } from "styled-components";
 import TrendsItem from "./TrendsList";
 import { Link } from "react-router-dom";
 import WhoToFollowUser from "./UsersToFollow";
@@ -62,6 +61,30 @@ const GlobalFooter = styled.footer`
   color: #718290;
   font-size: 13px;
 `;
+
+const StyledSpace = styled.div`
+  background-color: #14171a;
+  margin-top: 10px;
+`;
+
+const StyledIcon = styled.img`
+  margin-right: 3px;
+  margin-left: 3px;
+
+  ${props =>
+    props.kind === "delete" &&
+    css`
+      margin: 0;
+    `};
+`;
+
+const StyledList = styled.ul`
+  list-style: none;
+  padding: 0px;
+  display: flex;
+  margin: 0;
+`;
+
 const TrendsAndToFollow = props => (
   <div className="col-lg-3">
     <StyledSpace />
@@ -76,21 +99,21 @@ const TrendsAndToFollow = props => (
       <WhoToFollowUser
         userAvatar={process.env.PUBLIC_URL + "./img/toFollow/avatar1.png"}
         name="AppleInsider"
-        isAccountVerified="not-verified"
+        isAccountVerified={false}
         accountName="appleinsider"
       />
       <StyledBreaker />
       <WhoToFollowUser
         userAvatar={process.env.PUBLIC_URL + "./img/toFollow/avatar2.png"}
         name="Creode"
-        isAccountVerified="verified"
+        isAccountVerified={true}
         accountName="Creode"
       />
       <StyledBreaker />
       <WhoToFollowUser
         userAvatar={process.env.PUBLIC_URL + "./img/toFollow/avatar3.png"}
         name="Epiphany Search"
-        isAccountVerified="not-verified"
+        isAccountVerified={false}
         accountName="Epiph…"
       />
       <StyledBreaker />
