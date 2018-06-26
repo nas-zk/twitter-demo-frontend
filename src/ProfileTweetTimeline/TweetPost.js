@@ -2,13 +2,21 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { format, compareAsc } from "date-fns";
 import { Link } from "react-router-dom";
-import { Avatar, StyledIcon } from "../styled.js";
 import iconComment from "./icon-comment.svg";
 import iconEnvelope from "./icon-envelope.svg";
 import iconLove from "./icon-loves.svg";
 import iconRetweet from "./icon-retweet.svg";
 import iconNoLove from "./icon-no-love.svg";
 import iconPinned from "./icon-pinned.svg";
+
+const Avatar = styled.img`
+  border-radius: 100px;
+`;
+
+const StyledIcon = styled.img`
+  margin-right: 3px;
+  margin-left: 3px;
+`;
 
 const TweetPostBox = styled.div`
   background-color: #fff;

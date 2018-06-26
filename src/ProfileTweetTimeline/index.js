@@ -1,12 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { Link, NavLink } from "react-router-dom";
-import {
-  StyledNavLink,
-  StyledList,
-  StyledListMenu,
-  StyledSpace
-} from "../styled.js";
 import TweetPost from "./TweetPost";
 
 const TweetNav = styled.nav`
@@ -16,6 +10,39 @@ const StyledTimeline = styled.section`
   background-color: #fff;
 `;
 
+const StyledNavLink = styled(NavLink)`
+  text-decoration: none;
+  width: 100%;
+  box-sizing: border-box;
+  border-bottom: 2px solid #fff;
+  color: #1da1f2;
+  font-size: 18px;
+  font-weight: bold;
+
+  &.active {
+    color: #292f33;
+  }
+`;
+
+const StyledSpace = styled.div`
+  background-color: #14171a;
+  margin-top: 10px;
+`;
+
+const StyledList = styled.ul`
+  list-style: none;
+  padding: 0px;
+  display: flex;
+  margin: 0;
+`;
+
+const StyledListMenu = styled.li`
+  list-style: none;
+  align-self: baseline;
+  padding: 15px 23px 12px;
+  font-weight: bold;
+`;
+
 const TweetTimeline = props => (
   <div className="col-lg-6">
     <StyledSpace />
@@ -23,20 +50,16 @@ const TweetTimeline = props => (
       <TweetNav>
         <StyledList>
           <div className="row">
-            <StyledListMenu kind="tweetTab">
-              <StyledNavLink kind="tweetTab" to="/everyinteract">
-                Tweets
-              </StyledNavLink>
+            <StyledListMenu>
+              <StyledNavLink to="/everyinteract">Tweets</StyledNavLink>
             </StyledListMenu>
-            <StyledListMenu kind="tweetTab">
-              <StyledNavLink kind="tweetTab" to="/everyinteract/Replies">
+            <StyledListMenu>
+              <StyledNavLink to="/everyinteract/Replies">
                 Tweets & Replies
               </StyledNavLink>
             </StyledListMenu>
-            <StyledListMenu kind="tweetTab">
-              <StyledNavLink kind="tweetTab" to="/everyinteract/Media">
-                Media
-              </StyledNavLink>
+            <StyledListMenu>
+              <StyledNavLink to="/everyinteract/Media">Media</StyledNavLink>
             </StyledListMenu>
           </div>
         </StyledList>
