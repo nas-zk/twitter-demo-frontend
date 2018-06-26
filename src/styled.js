@@ -102,7 +102,6 @@ export const Avatar = styled.img`
 `;
 
 export const StyledIcon = styled.img`
-  margin-bottom: -3px;
   margin-right: 3px;
   margin-left: 3px;
 

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Link, NavLink } from "react-router-dom";
 import iconBird from "./icon-bird.svg";
 import iconHome from "./icon-home.svg";
@@ -7,16 +7,80 @@ import iconMagnifier from "./icon-magnifier.svg";
 import iconMessages from "./icon-messages.svg";
 import iconNotifications from "./icon-notifications.svg";
 import iconMoments from "./icon-moments.svg";
-import {
-  StyledNavLink,
-  StyledContainer,
-  TwitterButton,
-  Avatar,
-  StyledHeader,
-  StyledListMenu,
-  StyledIcon,
-  StyledList
-} from "../styled";
+
+const Avatar = styled.img`
+  border-radius: 100px;
+`;
+
+const StyledIcon = styled.img`
+  margin-right: 3px;
+  margin-left: 3px;
+
+  ${props =>
+    props.kind === "magnifierIcon" &&
+    css`
+      margin: 0px;
+      align-self: baseline;
+    `};
+`;
+
+const StyledList = styled.ul`
+  list-style: none;
+  padding: 0px;
+  display: flex;
+  margin: 0;
+`;
+
+const StyledListMenu = styled.li`
+  list-style: none;
+  align-self: baseline;
+  padding: 0 14px 0 4px;
+  font-weight: bold;
+`;
+
+const StyledHeader = styled.header`
+  background-color: #fff;
+  padding: 3px 0 3px 0;
+`;
+
+const TwitterButton = styled.button`
+  background-color: #1da1f2;
+  color: #fff;
+  border: 1px solid #1da1f2;
+  border-radius: 100px;
+  font-weight: bold;
+  line-height: 20px;
+  padding: 4px 16px;
+  cursor: pointer;
+`;
+
+const StyledContainer = styled.div`
+  max-width: 890px;
+  margin: 0 auto;
+  padding: 0 auto;
+
+  @media (min-width: 1236px) {
+    max-width: 1190px;
+  }
+`;
+
+const StyledNavLink = styled(NavLink)`
+  text-decoration: none;
+  color: #667580;
+  width: 100%;
+  box-sizing: border-box;
+  border-bottom: 2px solid #fff;
+
+  ${StyledListMenu}:hover & {
+    color: #1da1f2;
+    box-sizing: border-box;
+    border-bottom: 2px solid #1da1f2;
+  }
+
+  ${StyledNavLink}:active & {
+    color: #1da1f2;
+  }
+`;
 
 const SearchBox = styled.form`
   background-color: #f5f8fa;
@@ -95,7 +159,7 @@ const GlobalNav = props => (
                 />
                 <SearchButton type="submit">
                   <StyledIcon
-                    kind="searchIcon"
+                    kind="magnifierIcon"
                     src={iconMagnifier}
                     alt="Magnifier"
                   />
