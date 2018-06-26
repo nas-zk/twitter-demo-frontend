@@ -1,19 +1,21 @@
 import React, { Component } from "react";
+import { BrowserRouter, Route } from "react-router-dom";
+import Helmet from "react-helmet";
+import { Redirect } from "react-router";
+import { StyledMain } from "./styled";
+import ProfilePage from "./ProfilePage";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-}
+const App = props => (
+  <BrowserRouter>
+    <StyledMain>
+      <Helmet>
+        <title>Twitter Demo App</title>
+        <meta name="description" content="Twitter Demo App" />
+      </Helmet>
+      <Redirect from="/" to="/everyinteract" />
+      <Route path="/everyinteract" component={ProfilePage} />
+    </StyledMain>
+  </BrowserRouter>
+);
 
 export default App;
